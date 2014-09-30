@@ -22,7 +22,7 @@ module.exports = {
                 welcoming: intRating.required(),
                 indifferent: intRating.required(),
                 french: intRating.required()
-            }),
+            }).required(),
             // Would you adopt a french person as a friend? yes or no (required)
             q4: Joi.boolean().required(),
         }),                 
@@ -43,12 +43,12 @@ module.exports = {
             q2: Joi.number().integer().min(0),
             // Rating 1-5 of various qualities
             q3: Joi.object().keys({
-                respect: intRating,
-                punctuality: intRating,
-                cleanliness: intRating,
-                welcoming: intRating,
-                indifferent: intRating,
-                french: intRating
+                respect: intRating.required(),
+                punctuality: intRating.required(),
+                cleanliness: intRating.required(),
+                welcoming: intRating.required(),
+                indifferent: intRating.required(),
+                french: intRating.required()
             }),
             // Would you adopt a french person as a friend? yes or no (required)
             q4: Joi.boolean(),

@@ -38,17 +38,17 @@ module.exports = {
         payload: Joi.object().keys({
             // How would you rate a Parisian for following fields, as percentage 
             q1: Joi.object().keys({
-                friendly: perRating,
-                happy: perRating,
-                warm: perRating,
-                generous: perRating,
+                friendly: perRating.required(),
+                happy: perRating.required(),
+                warm: perRating.required(),
+                generous: perRating.required(),
             }),
             // How would you rate a Parisian for following fields, as percentage 
             q2: Joi.object().keys({
-                talkative: perRating,
-                boring: perRating,
-                stressed: perRating,
-                pretentious: perRating
+                talkative: perRating.required(),
+                boring: perRating.required(),
+                stressed: perRating.required(),
+                pretentious: perRating.required(),
             }),
         }),
         date: 'updated',    // Sets 'updated' field to be dated at doc update

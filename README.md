@@ -32,7 +32,7 @@ Install Node.js by using the big install button on the [http://nodejs.org/](http
 After Node.js is installed, clone this repo, change `cd` to this directory, and run `npm install`
 
 ```bash
-$ git clone https://github.com/smaxwellstewart/hapi-ninja.git
+$ git clone https://github.com/smaxwellstewart/hapi-ninja.git --branch seedbox
 $ cd hapi-ninja
 $ npm install
 ```

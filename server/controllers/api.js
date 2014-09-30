@@ -28,7 +28,7 @@ var model = requireDirectory(module, '../models', {visit: addDB});
 
 // Survey 1 needs a little extra validation to make sure all conditional requirements are met
 var survey1Validate = function(request, next) {
-    // Make q2 required if 
+    // Make q2 required if q1 is answered true
     if(request.payload.q1 === true) {
         var result = Joi.validate(request.payload.q2, Joi.required())
         if (result.error) {
@@ -36,6 +36,7 @@ var survey1Validate = function(request, next) {
             return next(err).takeover()
         }
     }
+    // Make q3, q4 and q5 required if q2 is answered true
     if(request.payload.q2 === true) {
         var schema = {
             q3: Joi.string().required(),
@@ -172,6 +173,9 @@ module.exports = {
         }
     },
     survey3Update: {
+        pre: [
+            {method: survey3Validate, assign: "validated"}
+        ],
         handler: model.Survey3.update,
         app: {
             name: 'survey3Update'

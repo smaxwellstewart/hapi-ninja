@@ -10,9 +10,9 @@ module.exports = {
     create: {
         // Valid create payload 
         payload: Joi.object().keys({ 
-            // Do you know any french? yes or no (required)
+            // Do you know any French people? yes or no (required)
             q1: Joi.boolean().required(),
-            // Do you know any french? yes or no (required if answered yes in q1)
+            // Do you know any Parisians? yes or no (required if answered yes in q1)
             q2: Joi.alternatives()
                 .when('q1', { is: true, then: Joi.boolean() }),
             // How many french in paris do you know? 1-6, 6-10, 11-50 or 50+ (required if answered yes in q2)
