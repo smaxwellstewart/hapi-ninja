@@ -13,9 +13,11 @@ module.exports = {
             // Do you know any french? yes or no (required)
             q1: Joi.boolean().required(),
             // Do you know any french? yes or no (required if answered yes in q1)
-            q2: Joi.when('q1', { is: true, then: Joi.valid(true,false).required() }),
+            q2: Joi.alternatives()
+                .when('q1', { is: true, then: Joi.boolean() }),
             // How many french in paris do you know? 1-6, 6-10, 11-50 or 50+ (required if answered yes in q2)
-            q3: Joi.when('q2', { is: true, then: Joi.valid('1-5', '6-10', '11-50', '50+').required() }),
+            q3: Joi.alternatives()
+                .when('q2', { is: true, then: Joi.valid('1-5', '6-10', '11-50', '50+') }),
             // Rate 20% of most friendly, from how many people you know answered in q3, individually on 1-5 rating
             q4: Joi.alternatives()
                 .when('q3', {is: '1-5', then: Joi.array().min(0).max(1).includes(intRating) })
@@ -30,8 +32,8 @@ module.exports = {
                 .when('q3', {is: '11-50', then: Joi.array().min(8).max(40).includes(intRating) })
                 .when('q3', {is: '50+' , then: Joi.array().min(40).includes(intRating) }),
             // Rate the reputation of Parisians in general, 1-5 rating
-            q6: intRating.required()     
-        }),                 
+            q6: intRating.required()    
+        }).required(),                 
         date: 'created',    // Sets 'created' field to be dated at doc creation, needed for realtime reporting
         access: "normal"     // Sets which role can create 
     },
