@@ -17,14 +17,17 @@
     "postinstall": "bower install"
   },
   "dependencies": {
-    "hapi": "~6.7.1",
-    "good": "~2.2.3",
-    "require-directory": "~2.0.0",
     "bower": "~1.3.9",
-    "swig": "~1.4.2",
-    "hapi-named-routes": "~0.2.0",
+    "good": "~2.2.3",
+    "hapi": "~6.7.1",
     "hapi-assets": "~0.2.1",
-    "hapi-cache-buster": "~0.2.0"
+    "hapi-cache-buster": "~0.2.0",
+    "hapi-named-routes": "~0.2.0",
+    "joi": "^4.7.0",
+    "mongodb": "^1.4.17",
+    "require-directory": "~2.0.0",
+    "swig": "~1.4.2",
+    "toothache": "^1.1.1"
   },
   "devDependencies": {
     "gulp": "~3.8.7",

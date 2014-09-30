@@ -9,6 +9,88 @@ module.exports = function(server) {
 
     // Array of routes for Hapi
     var routeTable = [
+        // API routes
+        // NosQuestions, VosRéponses Inc.
+        {
+            method: 'POST',
+            path: '/api/survey1.json',
+            config: controller.api.survey1Create
+        },
+        {
+            method: 'POST',
+            path: '/api/survey1/find.json',
+            config: controller.api.survey1Find
+        },
+        {
+            method: 'GET',
+            path: '/api/survey1/{id}.json',
+            config: controller.api.survey1Get
+        },
+        {
+            method: 'PUT',
+            path: '/api/survey1/{id}.json',
+            config: controller.api.survey1Update
+        },
+        {
+            method: 'DELETE',
+            path: '/api/survey1/{id}.json',
+            config: controller.api.survey1Delete
+        },
+        // ParisMonAmi Inc.
+        {
+            method: 'POST',
+            path: '/api/survey2.json',
+            config: controller.api.survey2Create
+        },
+        {
+            method: 'POST',
+            path: '/api/survey2/find.json',
+            config: controller.api.survey2Find
+        },
+        {
+            method: 'GET',
+            path: '/api/survey2/{id}.json',
+            config: controller.api.survey2Get
+        },
+        {
+            method: 'PUT',
+            path: '/api/survey2/{id}.json',
+            config: controller.api.survey2Update
+        },
+        {
+            method: 'DELETE',
+            path: '/api/survey2/{id}.json',
+            config: controller.api.survey2Delete
+        },
+        // SondageMieux Inc.
+        {
+            method: 'POST',
+            path: '/api/survey3.json',
+            config: controller.api.survey3Create
+        },
+        {
+            method: 'POST',
+            path: '/api/survey3/find.json',
+            config: controller.api.survey3Find
+        },
+        {
+            method: 'GET',
+            path: '/api/survey3/{id}.json',
+            config: controller.api.survey3Get
+        },
+        {
+            method: 'PUT',
+            path: '/api/survey3/{id}.json',
+            config: controller.api.survey3Update
+        },
+        {
+            method: 'DELETE',
+            path: '/api/survey3/{id}.json',
+            config: controller.api.survey3Delete
+        },
+
+
+        // Frontend routes
         {
             method: 'GET',
             path: '/',
@@ -44,11 +126,13 @@ module.exports = function(server) {
             path: '/single-project',
             config: controller.base.singleProject
         },
+        // Missing route
         {
             method: 'GET',
             path: '/{path*}',
             config: controller.base.missing
         },
+        // Asset routes
         {
             method: 'GET',
             path: '/partials/{path*}',
@@ -78,6 +162,11 @@ module.exports = function(server) {
             method: 'GET',
             path: '/bower_components/{path*}',
             config: controller.assets.bower
+        },
+        {
+            method: 'GET',
+            path: '/wiki/{path*}',
+            config: controller.assets.wiki
         }
     ];
     return routeTable;

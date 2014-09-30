@@ -1,10 +1,13 @@
-Hapi Ninja
+Seedbox Test 2
 ==========
 
-Boilerplate Hapi Web and API Server Example
+## The Brief:
 
-## The Goal:
-Create a base boilerplate example showing how easy it is to get started with Hapi as a web server.
+L'association française de réputation des parisiens émigrés dans le monde a besoin de statistiques sur la réputation de ses membres.
+Afin de pouvoir lancer sa campagne de communication 'Un parisien, c'est bien' au budget pantagruellique, vous êtes mandatés pour definir une API REST exposant l'ensemble des sondages effectués à travers le monde. Cette API permet à différentes applications de créer une interface pour tout ces questionnaires et de renvoyer les réponses de chaque participant pour que vous puissiez les stocker.
+Il vous faudra donc modéliser l'ensemble des questionnaires dont les templates sont joints dans les fichier attachés (*.txt) dans le système de gestion de donnée de votre choix, avec les language, outil et/ou framework de votre choix, et les exposer au travers de cette API pour consultation et modification. Vous n'aurez pas besoin de dessiner d'interface ou d'afficher autre chose que des réponses HTTP (JSON).
+
+En bonus, vous pourrez proposer une architecture et/ou un outil qui permettrai de connaître en temps réel, les résultats du sondage, et de faire un 'scoring' de la réputation ainsi obtenue en fonction d'une ponderation en point de chaque réponse et de l'importance de chaque question. Cette architecture devra être pensée et dimensionner jusqu'à pouvoir atteindre plus de 1 milliard de répondant dans le monde.
 
 ## The Stack:
 **Node.js** - Because it's fast, easy to get started, and Javscript is awesome.
@@ -12,6 +15,9 @@ Create a base boilerplate example showing how easy it is to get started with Hap
 
 **Hapi** - A very well designed server framework that is easy to understand, easy to create your own plugins, scales very well, cache options built in, and more.
 [http://spumko.github.io/](http://spumko.github.io/)
+
+**Mongo** - A great NoSQL database that handles JSON natively, perfect fit for Node.js projects.
+[http://www.mongodb.org/](http://www.mongodb.org/)
 
 **Swig** - It looks like HTML, it's very fast, great for template inheritance, and allows you to use HTML syntax with the server and with front-end client Javascript includes.
 [http://paularmstrong.github.io/swig/](http://paularmstrong.github.io/swig/docs/#browser)
@@ -26,7 +32,7 @@ Install Node.js by using the big install button on the [http://nodejs.org/](http
 After Node.js is installed, clone this repo, change `cd` to this directory, and run `npm install`
 
 ```bash
-$ git clone https://github.com/poeticninja/hapi-ninja.git
+$ git clone https://github.com/smaxwellstewart/hapi-ninja.git
 $ cd hapi-ninja
 $ npm install
 ```
@@ -36,16 +42,16 @@ Start the server by running the command:
 $ node server
 ```
 
-To see any changes you can manually just shutdown and restart the node server. This can be a pain so I use Supervisor to watch for file changes and restart the server [https://github.com/isaacs/node-supervisor](https://github.com/isaacs/node-supervisor).
+To see any changes you can manually just shutdown and restart the node server. This can be a pain so I use PM@ to watch for file changes and restart the server [https://github.com/Unitech/pm2](https://github.com/Unitech/pm2).
 
 To install run:
 ```
-$ npm install -g supervisor
+$ npm install -g pm2
 ```
 
 To use it run:
 ```
-$ supervisor -e html,js  server
+$ pm2 start server.js -n seedbox --watch
 ```
 
 Now all of your server html and js files are being watched and on change the node server gets restarted automatically.
@@ -63,6 +69,9 @@ Now you can run `gulp` from the command line and it will run the tasks in the `g
 ## Plugins
 The Hapi plugins that are being used.
 
+### Toothache
+A Hapi plugin that removes the toothache from creating CRUD endpoints for MongoDB. This plugin is configured using model files located in server/models/, once configured we have a number of request handlers for performing basic crud from a Hapi server into a MongoDB. [https://github.com/smaxwellstewart/toothache](https://github.com/smaxwellstewart/toothache)
+
 #### Hapi-Named-Routes
 Added names to the routes. This allows you to have access to the path in the templates just by using the `path.nameofroute` variable. [https://github.com/poeticninja/hapi-named-routes](https://github.com/poeticninja/hapi-named-routes)
 
@@ -77,42 +86,3 @@ There are two main folders in the stack. The "**public**" folder for front-end (
 
 By having the front-end folder and server side folder be specific, it provides for better consistency when changing projects. This way when you change from a full front-end app (Phonegap), to a front-end and server side app you get to keep the same folder structure. Allowing for better consistency with your stack, projects, and tools.
 
-## Theme
-
-This [theme](http://www.blacktie.co/2014/05/solid-multipurpose-theme/) is a 7 pages theme ideal for web agencies and freelancers. Uses Font Awesome, Masonry Javascript, PrettyPhoto lightbox and nice hover effects thanks Codrops. Theme includes the Retina.js to work nice with retina display devices. Theme by [blacktie.co](http://www.blacktie.co).
-
-
-## Community Projects
-
-Projects that use hapi-ninja as a base.
-
-- [Hapi Dash](https://github.com/smaxwellstewart/hapi-dash) - Boilerplate Hapi Web and API Server Example, with frontend dashboard.
-
-## Contributers
-
-[Saul Maddox](https://github.com/poeticninja),[Simon Maxwell-Stewart](https://github.com/smaxwellstewrt)
-You?
-
-## Credits
-Credit goes to all of the open source code that people have made available.
-
-#### License
-
-The MIT License (MIT)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in
-the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
-the Software, and to permit persons to whom the Software is furnished to do so,
-subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
-FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
-COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
-IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

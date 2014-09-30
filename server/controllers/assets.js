@@ -47,5 +47,13 @@ module.exports = {
         app: {
             name: 'bower'
         }
+    },
+    wiki: {
+        handler: {
+            directory: { path: './public/wiki' }
+        },
+        app: {
+            name: 'wiki'
+        }
     }
 }
