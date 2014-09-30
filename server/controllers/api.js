@@ -28,6 +28,7 @@ var model = requireDirectory(module, '../models', {visit: addDB});
 
 // Survey 1 needs a little extra validation to make sure all conditional requirements are met
 var survey1Validate = function(request, next) {
+    // Make q2 required if 
     if(request.payload.q1 === true) {
         var result = Joi.validate(request.payload.q2, Joi.required())
         if (result.error) {
@@ -51,6 +52,30 @@ var survey1Validate = function(request, next) {
         
         if (result.error) {
             var err = Hapi.error.badRequest("ValidationError: q3, q4 and q5 is required if q2 is true.");
+            return next(err).takeover()
+        }
+    }
+
+    return next('validated');
+}
+
+// Survey 3 needs a little extra validation to make sure all percentages of question <= 100
+var survey3Validate = function(request, next) {
+    var per1 = request.payload.q1;
+    var per2 = request.payload.q2;
+    if(per1 !== undefined && per1.friendly !== undefined && per1.warm !== undefined && per1.happy !== undefined && per1.generous !== undefined) {
+        var totalPercent = per1.friendly + per1.warm + per1.happy + per1.generous;
+        var result = Joi.validate(totalPercent, Joi.number().min(0).max(100).required())
+        if (result.error) {
+            var err = Hapi.error.badRequest("ValidationError: q1 total percentages must be greater than 0 and less than 100.");
+            return next(err).takeover()
+        }
+    }
+    if(per2 !== undefined && per2.talkative !== undefined && per2.boring !== undefined && per2.stressed !== undefined && per2.pretentious !== undefined) {
+        var totalPercent = per2.talkative + per2.boring + per2.stressed + per2.pretentious;
+        var result = Joi.validate(totalPercent, Joi.number().min(0).max(100).required())
+        if (result.error) {
+            var err = Hapi.error.badRequest("ValidationError: q2 total percentages must be greater than 0 and less than 100.");
             return next(err).takeover()
         }
     }
@@ -126,6 +151,9 @@ module.exports = {
         }
     },
     survey3Create: {
+        pre: [
+            {method: survey3Validate, assign: "validated"}
+        ],
         handler: model.Survey3.create,
         app: {
             name: 'survey3Create'

@@ -16,14 +16,14 @@ module.exports = {
                 happy: perRating.required(),
                 warm: perRating.required(),
                 generous: perRating.required(),
-            }),
+            }).required(),
             // How would you rate a Parisian for following fields, as percentage 
             q2: Joi.object().keys({
                 talkative: perRating.required(),
                 boring: perRating.required(),
                 stressed: perRating.required(),
                 pretentious: perRating.required(),
-            }),
+            }).required(),
         }),                 
         date: 'created',    // Sets 'created' field to be dated at doc creation, needed for realtime reporting
         access: "normal"     // Sets which role can create 

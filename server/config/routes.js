@@ -88,8 +88,6 @@ module.exports = function(server) {
             path: '/api/survey3/{id}.json',
             config: controller.api.survey3Delete
         },
-
-
         // Frontend routes
         {
             method: 'GET',
