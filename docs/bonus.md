@@ -16,43 +16,43 @@ Weighted Results
 
 I would use the following equation to get a 'friendliness' metric, F, from each survey response:
 
-![Friendliness Equation](/img/survey1-equation.gif)
+![Friendliness Equation](https://raw.githubusercontent.com/smaxwellstewart/hapi-ninja/seedbox/public/img/survey1-equation.gif)
 
-Where w<sub>4</sub> is the weighting of q4, w<sub>5</sub> is the weighting of q5, w<sub>6</sub> is the weighting of q6. I think the average ratings, ![AVG q4](/img/s1-avgQ4.gif) , ![AVG q5](/img/s1-avgQ5.gif) , in question 4 and question 5 are twice as significant, as the general rating given in q6. This is because they provide a more detailed answer. Therefore suitable values for these weightings could be (in this survey 1 is most friendly, so low weightings are more significant):
+Where w<sub>4</sub> is the weighting of q4, w<sub>5</sub> is the weighting of q5, w<sub>6</sub> is the weighting of q6. I think the average ratings, ![AVG q4](https://raw.githubusercontent.com/smaxwellstewart/hapi-ninja/seedbox/public/img/s1-avgQ4.gif) , ![AVG q5](https://raw.githubusercontent.com/smaxwellstewart/hapi-ninja/seedbox/public/img/s1-avgQ5.gif) , in question 4 and question 5 are twice as significant, as the general rating given in q6. This is because they provide a more detailed answer. Therefore suitable values for these weightings could be (in this survey 1 is most friendly, so low weightings are more significant):
 
-![Individual Weights](/img/s1-weights.gif)
+![Individual Weights](https://raw.githubusercontent.com/smaxwellstewart/hapi-ninja/seedbox/public/img/s1-weights.gif)
 
 W is the weighting assigned to the whole survey response, the survery weight, it is meant to adjust the importance of a given survey based on the amount of Parisians the respondent knows, ![N](/img/s1-N.gif)
 
-![Survey Weight](/img/s1-survey-weight.gif)
+![Survey Weight](https://raw.githubusercontent.com/smaxwellstewart/hapi-ninja/seedbox/public/img/s1-survey-weight.gif)
 
 This term ensures that a survery where the respondent know lots of Parisians has a lower weighting (more significant):
 
-![Survey Weight Graph](/img/W-graph.png)
+![Survey Weight Graph](https://raw.githubusercontent.com/smaxwellstewart/hapi-ninja/seedbox/public/img/W-graph.png)
 
 #### Survey 2
 
 I would use the following equation to get a 'friendliness' metric, F, from each survey response:
 
-![Friendliness Equation](/img/s2-equation.gif)
+![Friendliness Equation](https://raw.githubusercontent.com/smaxwellstewart/hapi-ninja/seedbox/public/img/s2-equation.gif)
 
 Where w<sub>r</sub> is the weighting for respect rating, w<sub>w</sub> is the weighting for welcoming rating, w<sub>i</sub> is the weighting for indiffernt rating, indicated in q3. I felt the other qualities asked for in q3 were not relevant to friendliness, weighting of 0. This would be my suggested weighting of these terms:
 
-![Individual Weights](/img/s2-weights.gif)
+![Individual Weights](https://raw.githubusercontent.com/smaxwellstewart/hapi-ninja/seedbox/public/img/s2-weights.gif)
 
 w<sub>4</sub> is meant to adjust the metric if the respondent would not be willing to make friends with a Parisian. I view this as a useful overall indicator of how much the respondent's ratings in q3 should be weighted. For q4 = true || false:
 
-![w4 weight](/img/s2-w4.gif)
+![w4 weight](https://raw.githubusercontent.com/smaxwellstewart/hapi-ninja/seedbox/public/img/s2-w4.gif)
 
 W, the survery weight, is meant to adjust the importance of a given survey based on the amount of Parisians the respondent knows, and the amount of Parisians the respondent knows well,
 
-![Survey Weight](/img/s2-survey-weight.gif)
+![Survey Weight](https://raw.githubusercontent.com/smaxwellstewart/hapi-ninja/seedbox/public/img/s2-survey-weight.gif)
 
 This term ensures that a survery where the respondents know lots of Parisians, that they know well, have a higher weighting.
 
 #### Survey 3
 
-As I described in the [clarifications](/docs/clarifications) page, I could not see how the structure of the data in this question could give any meaningful metrics.
+As I described in the [clarifications](https://raw.githubusercontent.com/smaxwellstewart/hapi-ninja/seedbox/public/docs/clarifications) page, I could not see how the structure of the data in this question could give any meaningful metrics.
 
 Realtime Reporting
 -------------------
