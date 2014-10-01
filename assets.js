@@ -4,11 +4,13 @@ module.exports = {
     	css: [
     		'css/bootstrap.css',
     		'css/style.css',
-    		'css/font-awesome.min.css'
+    		'css/font-awesome.min.css',
+            'css/prism.css'
     	],
         js: [
         	'js/bootstrap.min.js',
         	'js/retina-1.1.0.js',
+            'js/prism.js',
         	'js/jquery.hoverdir.js',
         	'js/jquery.hoverex.min.js',
         	'js/jquery.prettyPhoto.js',

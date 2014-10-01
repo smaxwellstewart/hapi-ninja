@@ -1,20 +1,18 @@
 API
 ===
 
-The API can be accessed on this domain.
-
-For example, **POST** http://seedbox.smaxwellstewart.com/api/survey1.json
+The API can be accessed on this domain, http://seedbox.smaxwellstewart.com/api/{path*}
 
 Survey 1
 --------
 
 ### CREATE RESPONSE
 
-**POST** /api/survey1.json
+ - **POST** /api/survey1.json
 
 Capture a survey response from the following valid payloads...
 
-```js
+```javascript
 // Full payload example
 {
     "q1": true, // yes
@@ -49,7 +47,7 @@ Capture a survey response from the following valid payloads...
 
 In order to make sure all conditional questions are required properly, I added this step to the validation of the payload.
 
-```js
+```javascript
 // Survey 1 needs a little extra validation to make sure all conditional requirements are met
 var survey1Validate = function(request, next) {
     // Make q2 required if q1 is answered true
@@ -87,13 +85,13 @@ var survey1Validate = function(request, next) {
 
 ### FIND / GET ALL RESPONSES
 
-**POST** /api/survey1/find.json
+ - **POST** /api/survey1/find.json
 
 Find survery responses based on params in payload. If no payload supplied will simply return all captured responses.
 
 Example find payload...
 
-```js
+```javascript
 // Find all survery results where q2 was answered 'no'
 {
 	"q2":false
@@ -102,13 +100,13 @@ Example find payload...
 
 ### GET SINGLE RESPONSE
 
-**GET** /api/survey1/{id}.json
+ - **GET** /api/survey1/{id}.json
 
 Find a single response based on id param in URL, same as `_id` in mongo doc.
 
 Example find payload...
 
-```js
+```javascript
 // Find all survery results where q2 was answered 'no'
 {
 	"q2":false
@@ -117,23 +115,23 @@ Example find payload...
 
 ### UPDATE RESPONSE
 
-**PUT** /api/survey1/{id}.json
+ - **PUT** /api/survey1/{id}.json
 
 Update a single response based on payload. Individual questions can be updated individually.
 
 Example update payloads...
 
-```js
+```javascript
 {
 	"q1":false
 }
 ```
 
-**CAUTION!** At present data model can be violated if submit a single question from a set of conditional questions, violates coniditons. See [/#improvements]improvements for more details on fix.
+**CAUTION!** At present data model can be violated if submit a single question from a set of conditional questions, violates coniditons. See [improvements](/docs/improvements) for more details on fix.
 
 Example bad update...
 
-```js
+```javascript
 // Example existing response doc
 {
    "_id": "542b1ab020bbb7cd5c820567",
@@ -154,6 +152,12 @@ Example bad update...
 // have invalid array lengths according to data model
 ```
 
+### DELETE RESPONSE
+
+ - **DELETE** /api/survey1/{id}.json
+
+Delete a single response.
+
 Survey 2
 --------
 
@@ -161,7 +165,7 @@ Follows exactly the same pattern a described above but with with 'survery2' in p
 
 Examples of valid create payloads...
 
-```js
+```javascript
 {
     "q1":10, // Integer value greater than 0
     "q2":5, // Integer value greater than 0
@@ -184,7 +188,7 @@ Follows exactly the same pattern a described above but with with survery3 in pat
 
 Examples of valid create payloads...
 
-```js
+```javascript
 {
     "q1": {
         "friendly": 20, // 20 % rating
@@ -206,7 +210,7 @@ Examples of valid create payloads...
 
 In order to ensure total percentage of pie chart does not exceed 100% I added this step to the validation of the payload.
 
-```js
+```javascript
 // Survey 3 needs a little extra validation to make sure all percentages of question <= 100
 var survey3Validate = function(request, next) {
     var per1 = request.payload.q1;

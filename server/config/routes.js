@@ -96,8 +96,8 @@ module.exports = function(server) {
         },
         {
             method: 'GET',
-            path: '/about',
-            config: controller.base.about
+            path: '/docs/{doc}',
+            config: controller.base.docs
         },
         {
             method: 'GET',

@@ -1,0 +1,49 @@
+{% extends './layouts/default.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<style>
+ol, ul {
+	margin-left: 15px;
+	padding-left: 5px;
+}
+ol ul {
+	margin-left: 10px;
+	padding-left: 5px;
+}
+h1 {
+	margin-bottom: 40px;
+}
+h2 {
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+h4 {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+</style>
+<!-- *****************************************************************************************************************
+	 BLUE WRAP
+	 ***************************************************************************************************************** -->
+	<div id="blue">
+	    <div class="container">
+			<div class="row">
+				<h3>Docs.</h3>
+			</div><!-- /row -->
+	    </div> <!-- /container -->
+	</div><!-- /blue -->
+
+	<!-- *****************************************************************************************************************
+	 TITLE & CONTENT
+	 ***************************************************************************************************************** -->
+
+	 <div class="container mtb">
+	 	<div class="row">
+		 	<div class="col-lg-12">
+		 		{% autoescape false %}{{ text }}{% endautoescape %}
+		 	</div>
+	 	</div>
+	 </div><! --/container -->
+{% endblock %}
