@@ -36,7 +36,9 @@ I would use the following equation to get a 'friendliness' metric, F, from each 
 
 ![Friendliness Equation](/img/s2-equation.gif)
 
-Where w<sub>r</sub> is the weighting for respect rating, w<sub>w</sub> is the weighting for welcoming rating, w<sub>i</sub> is the weighting for indiffernt rating, indicated in q3. I felt the other qualities asked for in q3 were not relevant to friendliness, weighting of 0.
+Where w<sub>r</sub> is the weighting for respect rating, w<sub>w</sub> is the weighting for welcoming rating, w<sub>i</sub> is the weighting for indiffernt rating, indicated in q3. I felt the other qualities asked for in q3 were not relevant to friendliness, weighting of 0. This would be my suggested weighting of these terms:
+
+![Individual Weights](/img/s2-weights.gif)
 
 w<sub>4</sub> is meant to adjust the metric if the respondent would not be willing to make friends with a Parisian. I view this as a useful overall indicator of how much the respondent's ratings in q3 should be weighted. For q4 = true || false:
 
