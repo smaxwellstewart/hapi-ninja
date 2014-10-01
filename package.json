@@ -1,12 +1,12 @@
 {
-  "name": "hapi-ninja",
-  "description": "Boilerplate Hapi server example. Node.js, Hapi, and Swig.",
-  "version": "0.2.1",
-  "author": "Saul Maddox",
+  "name": "Seedbox-Test-2",
+  "description": "REST API for Web Scale Surverys",
+  "version": "0.0.1",
+  "author": "Simon Maxwell-Stewart",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/poeticninja/hapi-ninja.git"
+    "url": "https://github.com/smaxwellstewart/hapi-ninja/tree/seedbox"
   },
   "main": "server.js",
   "engines": {

@@ -1,7 +1,7 @@
 API
 ===
 
-The API can be accessed on this domain, http://seedbox.smaxwellstewart.com/api/{path*}
+The API can be accessed on this domain, `http://seedbox.smaxwellstewart.com/api/{path*}`
 
 Survey 1
 --------
@@ -43,7 +43,7 @@ Capture a survey response from the following valid payloads...
 }
 ```
 
-#### Extra Validation
+<!-- #### Extra Validation
 
 In order to make sure all conditional questions are required properly, I added this step to the validation of the payload.
 
@@ -81,7 +81,8 @@ var survey1Validate = function(request, next) {
 
     return next('validated');
 }
-```
+``` 
+-->
 
 ### FIND / GET ALL RESPONSES
 
@@ -161,7 +162,7 @@ Delete a single response.
 Survey 2
 --------
 
-Follows exactly the same pattern a described above but with with 'survery2' in path, instead of 'survey1'. 
+Follows exactly the same pattern a described above but with with 'survery2' in path, e.g. `/api/survery2.json`.
 
 Examples of valid create payloads...
 
@@ -184,7 +185,7 @@ Examples of valid create payloads...
 Survey 3
 --------
 
-Follows exactly the same pattern a described above but with with survery3 in path, instead of 'survey1'.
+Follows exactly the same pattern a described above but with with survery3 in path, e.g. `/api/survery3.json`.
 
 Examples of valid create payloads...
 
@@ -206,6 +207,7 @@ Examples of valid create payloads...
 
 ```
 
+<!--
 #### Extra validation
 
 In order to ensure total percentage of pie chart does not exceed 100% I added this step to the validation of the payload.
@@ -235,6 +237,7 @@ var survey3Validate = function(request, next) {
     return next('validated');
 }
 ```
+-->
 
 
 

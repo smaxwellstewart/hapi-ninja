@@ -45,6 +45,3 @@ For example a respondent might give this response for q1.
 This might seem like the respondent thought Parisians were not very friendly, but in reality it may just be that they think Parisians are happy, warm and generous **more** than they are friendly, but still think Parisians are very friendly.
 
 Personally, I think this creates a lot of unneccessary ambiguity in the data and I would consider restructuring the survey.
-
-Bonus
------

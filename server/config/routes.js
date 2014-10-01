@@ -99,31 +99,6 @@ module.exports = function(server) {
             path: '/docs/{doc}',
             config: controller.base.docs
         },
-        {
-            method: 'GET',
-            path: '/blog',
-            config: controller.base.blog
-        },
-        {
-            method: 'GET',
-            path: '/contact',
-            config: controller.base.contact
-        },
-        {
-            method: 'GET',
-            path: '/portfolio',
-            config: controller.base.portfolio
-        },
-        {
-            method: 'GET',
-            path: '/single-post',
-            config: controller.base.singlePost
-        },
-        {
-            method: 'GET',
-            path: '/single-project',
-            config: controller.base.singleProject
-        },
         // Missing route
         {
             method: 'GET',
@@ -160,11 +135,6 @@ module.exports = function(server) {
             method: 'GET',
             path: '/bower_components/{path*}',
             config: controller.assets.bower
-        },
-        {
-            method: 'GET',
-            path: '/wiki/{path*}',
-            config: controller.assets.wiki
         }
     ];
     return routeTable;

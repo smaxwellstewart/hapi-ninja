@@ -16,8 +16,7 @@
 Afin de pouvoir lancer sa campagne de communication 'Un parisien, c'est bien' au budget pantagruellique, vous êtes mandatés pour definir une API REST exposant l'ensemble des sondages effectués à travers le monde. Cette API permet à différentes applications de créer une interface pour tout ces questionnaires et de renvoyer les réponses de chaque participant pour que vous puissiez les stocker.
 Il vous faudra donc modéliser l'ensemble des questionnaires dont les templates sont joints dans les fichier attachés (*.txt) dans le système de gestion de donnée de votre choix, avec les language, outil et/ou framework de votre choix, et les exposer au travers de cette API pour consultation et modification. Vous n'aurez pas besoin de dessiner d'interface ou d'afficher autre chose que des réponses HTTP (JSON).</h5>
 
-<h5>En bonus, vous pourrez proposer une architecture et/ou un outil qui permettrai de connaître en temps réel, les résultats du sondage, et de faire un 'scoring' de la réputation ainsi obtenue en fonction d'une ponderation en point de chaque réponse et de l'importance de chaque question. Cette architecture devra être pensée et dimensionner jusqu'à pouvoir atteindre plus de 1 milliard de répondant dans le monde.</h5>
-					<h5>More Lorem Ipsum added here too.</h5>				
+<h5>En bonus, vous pourrez proposer une architecture et/ou un outil qui permettrai de connaître en temps réel, les résultats du sondage, et de faire un 'scoring' de la réputation ainsi obtenue en fonction d'une ponderation en point de chaque réponse et de l'importance de chaque question. Cette architecture devra être pensée et dimensionner jusqu'à pouvoir atteindre plus de 1 milliard de répondant dans le monde.</h5>			
 				</div>
 				
 			</div><!-- /row -->
@@ -33,20 +32,17 @@ Il vous faudra donc modéliser l'ensemble des questionnaires dont les templates 
  				<div class="col-md-4">
  					<i class="fa fa-heart-o"></i>
  					<h4>High Availability</h4>
- 					<p>By leveraging the power of Node.js and MongoDB, I have constructed an API that focusses on being highly available. Due to the nature of the data being captured, this fits the brief. As the data is not financial or highly crucial, i think it is worthwhile to sacrifice ACID compliance (Mongo is not ACID compliant) for the huge benefits of a highly available stack that can serve 1 billion users.</p>
- 					<p><br/><a href="#" class="btn btn-theme">More Info</a></p>
+ 					<p>By leveraging the power of Node.js and MongoDB, I have constructed an API that focusses on being highly available over ACID compliant. Due to the nature of the data being non-criticial ie. financial, I believe this fits the brief to construct and API that can serve 1 billion users.</p>
  				</div>
  				<div class="col-md-4">
- 					<i class="fa fa-flask"></i>
- 					<h4>Full API Documentation</h4>
- 					<p>It is important in any project to provide clear documentation for how your application works. I have included a wiki to provide detailed information about the API, stack choices and other information.</p>
- 					<p><br/><a href="#" class="btn btn-theme">More Info</a></p>
+ 					<i class="fa fa-book"></i>
+ 					<h4>Full Documentation</h4>
+ 					<p>It is important in any project to provide clear documentation for how your application works. I have included a docs section to provide detailed information about the API, stack choices and other information.</p>
  				</div>
  				<div class="col-md-4">
  					<i class="fa fa-trophy"></i>
  					<h4>Realtime Results</h4>
  					<p>Trying to provide realtime results on big data sets can be challenging. I have proposed an idea to implement a basic <a href="https://www.mapr.com/developercentral/lambda-architecture">lambda architecture</a>, using map-reduce to combine pre-computed reports with realtime generated reports.</p>
- 					<p><br/><a href="#" class="btn btn-theme">More Info</a></p>
  				</div>		 				
 	 		</div>
 	 	</div><! --/container -->

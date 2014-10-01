@@ -15,9 +15,7 @@ module.exports = {
         }
     },
     docs: {
-        handler: function(request, reply){
-            
-            console.log('here')
+        handler: function(request, reply) {
             var markdown = fs.readFileSync(__dirname+'/../../docs/'+request.params.doc+'.md', {encoding: 'utf8'});
             
             // Render the view with the custom greeting
@@ -28,56 +26,6 @@ module.exports = {
         },
         app: {
             name: 'docs'
-        }
-    },
-    blog: {
-        handler: function(request, reply){
-            reply.view('blog', {
-                title: 'HAPI NINJA - Blog'
-            });
-        },
-        app: {
-            name: 'blog'
-        }
-    },
-    contact: {
-        handler: function(request, reply){
-            reply.view('contact', {
-                title: 'HAPI NINJA - Contact'
-            });
-        },
-        app: {
-            name: 'contact'
-        }
-    },
-    portfolio: {
-        handler: function(request, reply){
-            reply.view('portfolio', {
-                title: 'HAPI NINJA - Blog'
-            });
-        },
-        app: {
-            name: 'portfolio'
-        }
-    },
-    singlePost: {
-        handler: function(request, reply){
-            reply.view('single-post', {
-                title: 'HAPI NINJA - Single Post'
-            });
-        },
-        app: {
-            name: 'singlePost'
-        }
-    },
-    singleProject: {
-        handler: function(request, reply){
-            reply.view('single-project', {
-                title: 'HAPI NINJA - Single Project'
-            });
-        },
-        app: {
-            name: 'singleProject'
         }
     },
     missing: {
