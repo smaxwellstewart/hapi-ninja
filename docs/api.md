@@ -3,6 +3,8 @@ API
 
 The API can be accessed on this domain, `http://seedbox.smaxwellstewart.com/api/{path*}`
 
+All API requests should be sent with with 'Content-Type': 'application/json' header.
+
 Survey 1
 --------
 
